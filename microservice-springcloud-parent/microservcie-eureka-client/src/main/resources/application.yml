@@ -1,0 +1,14 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: microservice-eureka-client  # 指定应用名称
+
+eureka:
+  instance:
+    prefer-ip-address: true  # 是否显示主机的IP，鼠标移动到Status列中的链接时，浏览器左下角显示出 "IP:端口号" 形式
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}  # Status中的内容以 "IP:端口号" 形式显示
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
