@@ -12,3 +12,15 @@ eureka:
 spring:
   application:
     name: microservice-service-order  # 指定应用名称
+
+microservice-service-member:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+
+ribbon:
+  eager-load:
+    enabled: true
+    # 多个用,分隔
+    clients: microservice-service-member
+
+
