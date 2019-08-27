@@ -13,4 +13,13 @@ spring:
   application:
     name: microservice-service-order-feign  # 指定应用名称
 
+feign:
+  client:
+    config:
+      microservice-service-member:
+        loggerLevel: none
+
+logging:
+  level:
+    com.cimc.cloud.feign.MemberFeignClient: debug
 
