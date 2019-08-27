@@ -19,8 +19,7 @@ public class MemberController {
     @Autowired
     private IMemberService memberService;
 
-    @GetMapping
-    @RequestMapping("/getMember/{id}")
+    @GetMapping("/getMember/{id}")
     public User getMember(@PathVariable Long id) {
         System.out.println(ServiceInfoUtil.getPort());
         return memberService.getMember(id);

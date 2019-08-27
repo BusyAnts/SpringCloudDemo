@@ -13,6 +13,7 @@
         <module>microservice-consul-client</module>
         <module>microservice-service-member</module>
         <module>microservice-service-order</module>
+        <module>microservice-service-order-feign</module>
     </modules>
     <packaging>pom</packaging>
 
