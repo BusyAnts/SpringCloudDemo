@@ -19,4 +19,13 @@ public class MemberServiceImpl implements IMemberService {
         user.setAge(35);
         return user;
     }
+
+    @Override
+    public User getMember(Long id, String name) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        user.setAge(36);
+        return user;
+    }
 }

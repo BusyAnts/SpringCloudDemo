@@ -14,4 +14,12 @@ public interface IMemberService {
      * @return
      */
     User getMember(Long id);
+
+    /**
+     * 根据id，姓名查找
+     * @param id
+     * @param name
+     * @return
+     */
+    User getMember(Long id,String name);
 }

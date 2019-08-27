@@ -4,10 +4,7 @@ import com.cimc.cloud.config.ServiceInfoUtil;
 import com.cimc.cloud.entity.User;
 import com.cimc.cloud.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author chenz
@@ -23,5 +20,15 @@ public class MemberController {
     public User getMember(@PathVariable Long id) {
         System.out.println(ServiceInfoUtil.getPort());
         return memberService.getMember(id);
+    }
+
+    @GetMapping("/getMember")
+    public User getMember(@RequestParam Long id, @RequestParam String name) {
+        return memberService.getMember(id, name);
+    }
+
+    @PostMapping("/member")
+    public User member(@RequestBody User user) {
+        return user;
     }
 }
