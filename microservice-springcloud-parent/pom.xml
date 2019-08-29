@@ -16,6 +16,7 @@
         <module>microservice-service-order-feign</module>
         <module>microservice-service-order-common-hystrix</module>
         <module>microservice-service-order-feign-hystrix</module>
+        <module>microservice-hystrix-dashboard</module>
     </modules>
     <packaging>pom</packaging>
 
