@@ -1,5 +1,9 @@
 server:
-  port: 9001
+  port: 80
+
+spring:
+  application:
+    name: microservice-zuul
 
 eureka:
   instance:
@@ -8,18 +12,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-
-spring:
-  application:
-    name: microservice-service-order-feign  # 指定应用名称
-
-feign:
-  client:
-    config:
-      microservice-service-member:
-        loggerLevel: none
-
-logging:
-  level:
-    com.cimc.cloud.feign.MemberFeignClient: debug
-
