@@ -11,12 +11,17 @@ eureka:
 
 spring:
   application:
-    name: microservice-service-order-hystrix-common  # 指定应用名称
+    name: microservice-service-order-common-hystrix  # 指定应用名称
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream,health'
   endpoint:
     health:
       show-details: always
+
 
 
 
