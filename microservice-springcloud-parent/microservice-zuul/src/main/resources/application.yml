@@ -22,6 +22,24 @@ management:
     health:
       show-details: always
 
+zuul:
+  routes:
+    microservice-service-member:
+      path: /member/**
+      strip-prefix: false
+  TokenFilter:
+    pre:
+      disable: true
+
+
+
+
+
+
+
+
+
+
 
 
 
