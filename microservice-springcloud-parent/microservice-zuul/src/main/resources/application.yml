@@ -27,6 +27,9 @@ zuul:
     microservice-service-member:
       path: /member/**
       strip-prefix: false
+    microservice-service-order-feign-hystrix:
+      path: /order/**
+      strip-prefix: false
   TokenFilter:
     pre:
       disable: true
