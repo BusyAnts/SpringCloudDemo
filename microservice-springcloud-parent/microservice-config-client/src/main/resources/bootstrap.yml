@@ -16,3 +16,9 @@ spring:
         service-id: microservice-config-server  # 配置中心服务名
         enabled: true
       label: master
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
