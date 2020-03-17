@@ -12,3 +12,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true  # 表示将自己注册进EurekaServer，默认为true
+    fetch-registry: true  # 表示抓取已有的注册信息，默认为true
