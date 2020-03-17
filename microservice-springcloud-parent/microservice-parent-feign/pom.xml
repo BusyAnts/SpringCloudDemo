@@ -9,18 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microservice-service-order</artifactId>
+    <artifactId>microservice-parent-feign</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>microservice-api-service</module>
+        <module>microservice-member-service</module>
+        <module>microservice-order-service</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

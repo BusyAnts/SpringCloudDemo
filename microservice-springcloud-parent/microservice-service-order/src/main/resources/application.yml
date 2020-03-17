@@ -18,6 +18,11 @@ microservice-service-member:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
 
 ribbon:
+  http:
+    client:
+      enabled: true
+  ReadTimeout: 5000  # 建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ConnectTimeout: 5000  # 建立连接后从服务器读取到可用资源所用的时间
   eager-load:
     enabled: true
     # 多个用,分隔

@@ -19,6 +19,12 @@ public class MemberController {
     @GetMapping("/getMember/{id}")
     public User getMember(@PathVariable Long id) {
         System.out.println(ServiceInfoUtil.getPort());
+        //模拟耗时请求
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return memberService.getMember(id);
     }
 
