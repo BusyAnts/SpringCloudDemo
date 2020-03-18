@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 9001
 
 eureka:
   instance:
@@ -11,16 +11,18 @@ eureka:
 
 spring:
   application:
-    name: microservice-service-order-common-hystrix  # 指定应用名称
+    name: microservice-hystrix-order  # 指定应用名称
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: 'hystrix.stream,health'
-  endpoint:
-    health:
-      show-details: always
+ribbon:
+  ReadTimeout: 5000  # 建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ConnectTimeout: 5000  # 建立连接后从服务器读取到可用资源所用的时间
+
+feign:
+  hystrix:
+    enabled: true
+
+
+
 
 
 

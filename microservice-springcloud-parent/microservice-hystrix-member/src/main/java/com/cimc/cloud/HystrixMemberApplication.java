@@ -3,19 +3,16 @@ package com.cimc.cloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author chenz
- * @create 2019-08-27 8:54
+ * @create 2020-03-11 14:28
  */
 @SpringBootApplication
-@EnableEurekaClient
-@EnableFeignClients
 @EnableCircuitBreaker
-public class OrderFeignHystrixApplication {
+public class HystrixMemberApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(OrderFeignHystrixApplication.class, args);
+        SpringApplication.run(HystrixMemberApplication.class, args);
     }
 }
