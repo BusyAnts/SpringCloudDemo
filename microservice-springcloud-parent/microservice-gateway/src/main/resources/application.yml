@@ -1,0 +1,29 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservice-gateway
+  cloud:
+    gateway:
+#      discovery:
+#        locator:
+#          enabled: false  # 开启重注册中心动态创建路由的功能，然后利用微服务名称进行路由
+      routes:
+        - id: member_route  # 路由的id，没有规定规则，但要求唯一，建议配合服务名
+          #uri: http://localhost:7901  # 匹配提供服务的路由地址
+          uri: lb://microservice-service-member  # 匹配提供服务的路由地址:
+          predicates:
+            #- Path=/member/**  # 断言，路径相匹配的进行路由
+            - After=2020-03-19T19:25:00.000+08:00[Asia/Shanghai]
+          #filters:
+            #- AddRequestHeader=X-Request-Id,1024
+            #- Hystrix=myCommandName
+
+eureka:
+  instance:
+    prefer-ip-address: true  # 是否显示主机的IP，鼠标移动到Status列中的链接时，浏览器左下角显示出 "IP:端口号" 形式
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}  # Status中的内容以 "IP:端口号" 形式显示
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

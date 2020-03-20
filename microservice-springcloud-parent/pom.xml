@@ -24,6 +24,7 @@
         <module>microservice-parent-feign</module>
         <module>microservice-hystrix-member</module>
         <module>microservice-hystrix-order</module>
+        <module>microservice-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
