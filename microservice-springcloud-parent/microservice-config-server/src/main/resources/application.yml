@@ -20,3 +20,5 @@ spring:
           search-paths:
             - client-config  # 搜索目录，可以配置多个
       label: master   # 读取分支
+
+

@@ -1,31 +1,22 @@
 package com.cimc.cloud.controller;
 
-import com.cimc.cloud.model.ConfigData;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author chenz
  */
 @RestController
-//@RefreshScope
+@RefreshScope
 public class IndexController {
-    @Value("${version}")
+    @Value("${config.version}")
     private String version;
 
-    @RequestMapping("/getVersion")
-    private String getVersion() {
+    @GetMapping("/getVersion")
+    public String getVersion() {
         return version;
-    }
-
-    @Autowired
-    private ConfigData configData;
-
-    @RequestMapping("/getVersion2")
-    private String getVersion2() {
-        return configData.getVersion();
     }
 
 }

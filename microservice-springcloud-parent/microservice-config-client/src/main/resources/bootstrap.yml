@@ -9,16 +9,23 @@ eureka:
 spring:
   application:
     name: microservice-config-client  # 指定应用名称
+#  cloud:
+#    config:
+#      profile: prod  # 读取后缀
+#      discovery:
+#        service-id: microservice-config-server  # 配置中心服务名
+#        enabled: true
+#      label: master
   cloud:
     config:
-      profile: prod  # 读取后缀
-      discovery:
-        service-id: microservice-config-server  # 配置中心服务名
-        enabled: true
-      label: master
+      uri: http://localhost:8080/
+      label: master  # 指定Git仓库的分支，对应config server所获取的配置文件的{label}
+      name: microservice-config-client  # 配置文件名称
+      profile: dev  # profile对应config server所获取的配置文件中的{profile}
+
 
 management:
   endpoints:
     web:
       exposure:
-        include: refresh
+        include: '*'  # 开启断点监控
