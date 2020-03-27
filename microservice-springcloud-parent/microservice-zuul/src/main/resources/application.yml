@@ -22,13 +22,14 @@ management:
     health:
       show-details: always
 
+logging:
+  level:
+    com.netflix: DEBUG
+
 zuul:
   routes:
     microservice-service-member:
       path: /member/**
-      strip-prefix: false
-    microservice-service-order-feign-hystrix:
-      path: /order/**
       strip-prefix: false
   TokenFilter:
     pre:

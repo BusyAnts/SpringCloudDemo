@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * @create 2019-08-26 11:38
  */
 @RestController
-@RequestMapping("/member")
+@RequestMapping("member")
 public class MemberController {
     @Autowired
     private IMemberService memberService;

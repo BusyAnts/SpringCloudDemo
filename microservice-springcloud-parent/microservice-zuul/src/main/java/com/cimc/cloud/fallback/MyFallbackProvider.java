@@ -6,7 +6,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.stereotype.Component;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -16,7 +16,7 @@ import java.nio.charset.Charset;
  *
  * @author chenz
  */
-@Component
+//@Component
 public class MyFallbackProvider implements FallbackProvider {
     @Override
     public String getRoute() {
