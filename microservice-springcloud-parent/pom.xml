@@ -25,6 +25,8 @@
         <module>microservice-hystrix-member</module>
         <module>microservice-hystrix-order</module>
         <module>microservice-gateway</module>
+        <module>microservice-config-bus-server</module>
+        <module>microservice-config-bus-client</module>
     </modules>
     <packaging>pom</packaging>
 
