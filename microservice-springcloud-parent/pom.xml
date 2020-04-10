@@ -14,8 +14,6 @@
         <module>microservice-service-member</module>
         <module>microservice-service-order</module>
         <module>microservice-service-order-feign</module>
-        <module>microservice-service-order-common-hystrix</module>
-        <module>microservice-service-order-feign-hystrix</module>
         <module>microservice-hystrix-dashboard</module>
         <module>microservice-zuul</module>
         <module>microservice-config-server</module>
@@ -27,6 +25,10 @@
         <module>microservice-gateway</module>
         <module>microservice-config-bus-server</module>
         <module>microservice-config-bus-client</module>
+        <module>microservice-stream-rabbitmq-provider</module>
+        <module>microservice-stream-rabbitmq-consumer</module>
+        <module>microservice-service-member-zipkin</module>
+        <module>microservice-service-order-zipkin</module>
     </modules>
     <packaging>pom</packaging>
 
