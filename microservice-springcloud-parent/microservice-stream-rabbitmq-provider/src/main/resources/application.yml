@@ -1,0 +1,32 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: microservice-stream-rabbitmq-provider
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:  # 此处配置要绑定的RabbitMQ的服务信息
+          type: rabbit  # 消息组件类型
+          environment:  # 设置RabbitMQ相关的环境配置
+            spring:
+              rabbitmq:
+                host: 192.168.20.128
+                port: 5672
+                username: guest
+                password: guest
+      bindings:  # 服务的整合处理
+        output:  # 通道名称
+          destination: studyExchange  # 定义exchange名称
+          content-type: application/json  # 设置消息类型
+          binder: defaultRabbit  # 设置要绑定的消息服务的具体设置
+
+eureka:
+  instance:
+    prefer-ip-address: true  # 是否显示主机的IP，鼠标移动到Status列中的链接时，浏览器左下角显示出 "IP:端口号" 形式
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}  # Status中的内容以 "IP:端口号" 形式显示
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
