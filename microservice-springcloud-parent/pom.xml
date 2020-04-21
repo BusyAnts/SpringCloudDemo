@@ -29,6 +29,9 @@
         <module>microservice-stream-rabbitmq-consumer</module>
         <module>microservice-service-member-zipkin</module>
         <module>microservice-service-order-zipkin</module>
+        <module>microservice-service-member-nacos</module>
+        <module>microservice-service-order-nacos</module>
+        <module>microservice-config-nacos-client</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -54,7 +57,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <build>
